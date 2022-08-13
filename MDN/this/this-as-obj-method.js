@@ -87,7 +87,7 @@ document.head.appendChild(script);
 
 // 'this' with a getter or setter
 // Again, the same notion holds true when a function is invoked from a getter or
-// a setter. A function used as getter or setter has its this bound to the object
+// a setter. A function used as getter or setter has its 'this' bound to the object
 // from which the property is being set or gotten.
 script = document.createElement("script");
 script.innerHTML = `
