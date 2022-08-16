@@ -202,12 +202,12 @@ class BaseClass {
     return this?.msg;
   }
 
-  basePublicBondedMethod() {
+  basePublicBoundMethod() {
     return this?.msg;
   }
 
   constructor() {
-    this.basePublicBondedMethod = this.basePublicBondedMethod.bind(this);
+    this.basePublicBoundMethod = this.basePublicBoundMethod.bind(this);
   }
 }
 
@@ -215,12 +215,12 @@ class SubClass extends BaseClass {
   subPublicMethod() {
     return super.basePublicMethod();
   }
-  subPublicBondedMethod() {
+  subPublicBoundMethod() {
     return super.basePublicMethod();
   }
   constructor() {
     super();
-    this.subPublicBondedMethod = this.subPublicBondedMethod.bind(this);
+    this.subPublicBoundMethod = this.subPublicBoundMethod.bind(this);
   }
 }
 
@@ -238,16 +238,16 @@ const globalMethod = new BaseClass().basePublicMethod;
 console.log(globalMethod());
 // expected output: "undefined"
 
-const globalBondedMethod = new BaseClass().basePublicBondedMethod;
-console.log(globalBondedMethod());
+const globalBoundMethod = new BaseClass().basePublicBoundMethod;
+console.log(globalBoundMethod());
 // expected output: "hello world"
 
 const globalSubMethod = subClassInstance.subPublicMethod;
 console.log(globalSubMethod());
 // expected output: undefined
 
-const globalSubBondedMethod = subClassInstance.subPublicBondedMethod;
-console.log(globalSubBondedMethod());
+const globalSubBoundMethod = subClassInstance.subPublicBoundMethod;
+console.log(globalSubBoundMethod());
 // expected output: "hello world"
 
 // Getters and setters are special methods that bind to a class property and are
